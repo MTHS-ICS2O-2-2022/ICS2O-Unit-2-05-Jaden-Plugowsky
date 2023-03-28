@@ -4,10 +4,22 @@
 // Created on: March 2023
 // This file contains the JS functions for index.html
 
-"use strict";
+"use strict"
 
 function buttonOneClicked() {
-  alert("Hello, World!");
+  // Input through textfields
+  const hoursWorked = parseInt(document.getElementById("hours-worked").value)
+  const salary = parseInt(document.getElementById("salary").value)
+  const pay = (hoursWorked * salary) * (1.00 * TAX_RATE)
+  const taxedMoney = (hoursWorked * salary) * TAX_RATE
+
+  const takeHomePay = pay - taxedMoney
+  const TAX_RATE = 0.18
+
+  // Process
+
+
+  // Output
   document.getElementById("answer").innerHTML =
-    "The answer is: " + "insert answer here";
+    "Your take-home pay is: " + takeHomePay
 }
