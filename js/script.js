@@ -6,20 +6,21 @@
 
 "use strict"
 
-function buttonOneClicked() {
+function calculatePressed() {
   // Input through textfields
-  const hoursWorked = parseInt(document.getElementById("hours-worked").value)
-  const salary = parseInt(document.getElementById("salary").value)
-  const pay = (hoursWorked * salary) * (1.00 * TAX_RATE)
-  const taxedMoney = (hoursWorked * salary) * TAX_RATE
-
-  const takeHomePay = pay - taxedMoney
+  const hoursWorked = parseFloat(document.getElementById("hours-worked").value)
+  const hourlyRate = parseFloat(document.getElementById("hourly-rate").value)
   const TAX_RATE = 0.18
 
   // Process
+  const pay = hoursWorked * hourlyRate
+  const taxedMoney = hoursWorked * hourlyRate * TAX_RATE
 
+  const takeHomePay = pay - taxedMoney
 
   // Output
-  document.getElementById("answer").innerHTML =
-    "Your take-home pay is: " + takeHomePay
+  document.getElementById("pay").innerHTML =
+    "Your take-home pay is: $" + takeHomePay.toFixed(2)
+  document.getElementById("taxed").innerHTML =
+    "The government will take: $" + taxedMoney.toFixed(2)
 }

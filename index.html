@@ -2,7 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="description" content="A website that calculates take-home pay." />
+    <meta
+      name="description"
+      content="A website that calculates take-home pay."
+    />
     <meta name="keywords" content="mths, ics2o" />
     <meta name="author" content="Jaden Plugowsky" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -38,7 +41,9 @@
         <div class="right-image">
           <img src="./images/blackholehd.jpg" alt="black hole image" />
         </div>
-        <div class="mdl-content">This program calculates take-home pay from a job. Tax is 18%.</div>
+        <div class="mdl-content">
+          This program calculates take-home pay from a job. Tax is 18%.
+        </div>
         <br />
         <!-- Numeric Textfield with Floating Label - Hours Worked -->
         <form action="#">
@@ -48,14 +53,18 @@
             <input
               class="mdl-textfield__input"
               type="text"
-              pattern="-?[0-9]*(\.[0-9]+)?"
+              pattern="-?[.0-9]*(\.[.0-9]+)?"
               id="hours-worked"
             />
-            <label class="mdl-textfield__label" for="hours-worked">Hours Worked</label>
-            <span class="mdl-textfield__error">Input is not a number!</span>
+            <label class="mdl-textfield__label" for="hours-worked"
+              >Hours Worked</label
+            >
+            <span class="mdl-textfield__error"
+              >Input is not a number or decimal!</span
+            >
           </div>
         </form>
-        <!-- Numeric Textfield with Floating Label - Salary -->
+        <!-- Numeric Textfield with Floating Label - Hourly Rate -->
         <form action="#">
           <div
             class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
@@ -63,26 +72,31 @@
             <input
               class="mdl-textfield__input"
               type="text"
-              pattern="-?[0-9]*(\.[0-9]+)?"
-              id="salary"
+              pattern="-?[.0-9]*(\.[.0-9]+)?"
+              id="hourly-rate"
             />
-            <label class="mdl-textfield__label" for="salary">Salary ($/yr)</label>
-            <span class="mdl-textfield__error">Input is not a number!</span>
+            <label class="mdl-textfield__label" for="hourly-rate"
+              >Hourly Rate ($/hr)</label
+            >
+            <span class="mdl-textfield__error"
+              >Input is not a number or decimal!</span
+            >
           </div>
         </form>
         <!-- Colored raised button with ripple -->
         <button
           class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
           id="button-one"
-          onclick="buttonOneClicked()"
+          onclick="calculatePressed()"
         >
-          Press
+          Calculate
         </button>
         <br />
         <br />
         <!-- Answer to be replaced using JS -->
         <div class="page-content-answer">
-          <div id="answer">The answer is: ...</div>
+          <div id="pay">Your take-home pay is: ...</div>
+          <div id="taxed">The government will take: ...</div>
         </div>
       </main>
     </div>
