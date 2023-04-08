@@ -11,7 +11,7 @@ func main() {
 	// This function finds take-home pay
 	var hoursWorked float64
 	var hourlyRate float64
-	var TAX_RATE float64 = 0.18
+	var taxRate float64 = 0.18
 	var pay float64
 	var taxedMoney float64
 	var takeHomePay float64
@@ -26,7 +26,7 @@ func main() {
 
 	// Process
 	pay = hoursWorked * hourlyRate
-	taxedMoney = (hoursWorked * hourlyRate) * TAX_RATE
+	taxedMoney = (hoursWorked * hourlyRate) * taxRate
 
 	takeHomePay = pay - taxedMoney
 
